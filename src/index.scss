@@ -16,6 +16,9 @@ body {
   h1 {
 	font-size: 2.5rem;
 	font-weight: bold;
+    @media screen and (max-width: 576px) {
+      font-size: 1.6rem;
+    }
   }
   a {
 	color: white;
@@ -29,6 +32,9 @@ body {
 .main {
   padding: 6rem 3rem;
   min-height: 80vh;
+  @media screen and (max-width: 576px) {
+    padding: 6rem 0;
+  }
 }
 hr {
   display: none;
@@ -36,4 +42,7 @@ hr {
 img {
   max-width: 100%;
   height: auto;
+}
+.container {
+  max-width: 1600px;
 }

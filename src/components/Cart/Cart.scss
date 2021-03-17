@@ -1,0 +1,19 @@
+.cart {
+  position: fixed;
+  top: 2rem;
+  right: 6rem;
+  padding-top: 1rem;
+  border: none;
+  background-color: darkblue;
+  cursor: pointer;
+  z-index: 10;
+  i {
+    color: white;
+  }
+  &__quantity {
+    position: relative;
+    top: -1.2rem;
+    padding: .3rem;
+    color: white;
+  }
+}

@@ -17,9 +17,6 @@
 	p {
 	  transform: translateY(1rem);
 	}
-	span {
-	  transform: translateY(.5rem);
-	}
 	a {
 	  color: dodgerblue;
 	}
@@ -36,10 +33,18 @@
   }
   span {
 	display: inline-block;
-	transition: all 1.4s ease;
   }
   a {
 	color: darkred;
 	transition: all .4s;
+  }
+  button {
+	margin-top: 1rem;
+	margin-left: 1rem;
+	padding: 0.3rem 1rem;
+	color: white;
+	background-color: dodgerblue;
+	border: none;
+	cursor: pointer;
   }
 }
