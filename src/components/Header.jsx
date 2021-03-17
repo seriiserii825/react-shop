@@ -1,24 +1,16 @@
-function Header() {
-    return (
-        <nav className='green darken-1'>
-            <div className='nav-wrapper'>
-                <a href='/' className='brand-logo'>
-                    React Shop
-                </a>
-                <ul id='nav-mobile' className='right hide-on-med-and-down'>
-                    <li>
-                        <a
-                            href='https://github.com/michey85/react-shop'
-                            target='_blank'
-                            rel='noreferrer'
-                        >
-                            Repo
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    );
+import React from "react";
+
+function Header () {
+  return (
+    <header className="main-header">
+      <h1>React shop</h1>
+      <ul className="menu">
+        <li>
+          <a href="#">Repo</a>
+        </li>
+      </ul>
+    </header>
+  );
 }
 
-export { Header };
+export {Header};
