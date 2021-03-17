@@ -6,7 +6,7 @@ function Header () {
       <h1>React shop</h1>
       <ul className="menu">
         <li>
-          <a href="#">Repo</a>
+          <a rel="noreferrer" target="_blank" href="https://github.com/seriiserii825/react-shop">Repo</a>
         </li>
       </ul>
     </header>

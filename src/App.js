@@ -6,6 +6,7 @@ function App () {
   return (
     <>
       <Header/>
+      <hr/>
       <div className="main">
         <Shop/>
       </div>
