@@ -46,5 +46,12 @@
 	background-color: dodgerblue;
 	border: none;
 	cursor: pointer;
+	transition: all .3s;
+	&:hover {
+	  background-color: darken(dodgerblue, 20%);
+	}
+	&:active {
+	  background-color: darken(dodgerblue, 50%);
+	}
   }
 }

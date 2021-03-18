@@ -1,5 +1,45 @@
 .basket-item {
-  h3 {
-	font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  transition: all .4s;
+  &:hover {
+	background-color: #d8f3d8;
+	i.close {
+	  transform: rotate(0);
+	}
+  }
+  i.close {
+	display: block;
+	color: darkred;
+	cursor: pointer;
+	transform: rotate(45deg);
+	transition: all .4s;
+  }
+  &__title {
+	display: inline-block;
+	width: 30%;
+  }
+  &__buttons {
+	display: inline-block;
+	margin-right: auto;
+	width: 30rem;
+  }
+  &__btn {
+	position: relative;
+	top: .6rem;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 1rem;
+	width: 2rem;
+	height: 2rem;
+	background-color: lightskyblue;
+	transition: all .4s;
+	cursor: pointer;
+	&:hover {
+	  background-color: darken(lightskyblue, 20%);
+	}
   }
 }

@@ -4,10 +4,33 @@
   left: 50%;
   width: 60%;
   transform: translate(-50%, -50%);
+  box-shadow: 0 6px 20px rgba(0,0,0,.3);
   z-index: 10;
   li:first-of-type,
   li:last-of-type {
 	color: white;
-	background-color: green;
+	background-color: darkseagreen;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    i {
+      display: block;
+      cursor: pointer;
+      transition: all .3s;
+      &:hover {
+        color: red;
+      }
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__price {
+    font-weight: bold;
+    color: midnightblue;
   }
 }

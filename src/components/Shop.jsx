@@ -11,6 +11,39 @@ function Shop () {
   const [order, setOrder] = useState([]);
   const [isBasketVisible, setBasketVisible] = useState(false);
   
+  function incQuantity (orderId) {
+    const newOrder = order.map(item => {
+      if (item.id === orderId) {
+        const newQuantity = item.quantity + 1;
+        return {...item, quantity: newQuantity};
+      } else {
+        return item;
+      }
+    });
+    
+    setOrder(newOrder);
+  }
+  
+  function decQuantity (orderId) {
+    const newOrder = order.map(item => {
+      if (item.id === orderId) {
+        const newQuantity = item.quantity - 1;
+        return {
+          ...item,
+          quantity: newQuantity >= 1 ? newQuantity : 1
+        };
+      } else {
+        return item;
+      }
+    });
+    
+    setOrder(newOrder);
+  }
+  
+  function removeFromBasket (id) {
+    setOrder(order.filter(item => item.id !== id));
+  }
+  
   const addToBasket = (item) => {
     const itemIndex = order.findIndex(orderItem => orderItem.id === item.id);
     
@@ -53,7 +86,8 @@ function Shop () {
       <hr/>
       {loading ? <Preloader/> : <GoodsList addToBasket={addToBasket} goods={goods}/>}
       <hr/>
-      {isBasketVisible && <Basket orders={order}/>}
+      {isBasketVisible &&
+      <Basket decQuantity={decQuantity} incQuantity={incQuantity} removeFromBasket={removeFromBasket} toggleBasket={toggleBasket} orders={order}/>}
     </main>
   );
 }
