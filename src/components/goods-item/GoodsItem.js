@@ -8,7 +8,7 @@ const GoodsItem = (props) => {
       <h2>{props.displayName}</h2>
       <p>{props.displayDescription}</p>
       <span>Цена: <strong>{props.price.finalPrice}</strong> руб.</span>
-      <button>Купить</button>
+      <button onClick={() => props.addToBasket({id: props.mainId, name: props.displayName, price: props.price.regularPrice})}>Купить</button>
     </div>
   );
 };
