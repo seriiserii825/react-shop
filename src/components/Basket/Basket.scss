@@ -1,0 +1,13 @@
+.basket {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  li:first-of-type,
+  li:last-of-type {
+	color: white;
+	background-color: green;
+  }
+}

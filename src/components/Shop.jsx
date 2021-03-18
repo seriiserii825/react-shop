@@ -3,11 +3,13 @@ import {API_KEY, API_URL} from "../config";
 import Preloader from "./preloader/Preloader";
 import GoodsList from "./goods-list/GoodsList";
 import Cart from "./Cart/Cart";
+import Basket from "./Basket/Basket";
 
 function Shop () {
   const [goods, setGoods] = useState([]);
   const [loading, setLoading] = useState(false);
   const [order, setOrder] = useState([]);
+  const [isBasketVisible, setBasketVisible] = useState(false);
   
   const addToBasket = (item) => {
     const itemIndex = order.findIndex(orderItem => orderItem.id === item.id);
@@ -30,6 +32,10 @@ function Shop () {
     }
   }
   
+  function toggleBasket () {
+    setBasketVisible(!isBasketVisible);
+  }
+  
   useEffect(function getGoods () {
     setLoading(true);
     fetch(API_URL, {
@@ -43,9 +49,11 @@ function Shop () {
   
   return (
     <main className='container content'>
-      <Cart quantity={order.length}/>
+      <Cart quantity={order.length} toggleBasket={toggleBasket}/>
       <hr/>
       {loading ? <Preloader/> : <GoodsList addToBasket={addToBasket} goods={goods}/>}
+      <hr/>
+      {isBasketVisible && <Basket orders={order}/>}
     </main>
   );
 }
